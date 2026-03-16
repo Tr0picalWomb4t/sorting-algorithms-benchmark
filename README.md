@@ -64,22 +64,62 @@ javac src/sorters/*.java src/Main.java
 java -cp src Main
 ```
 
+> ⚠️ **Important:** Do **not** use Code Runner in VS Code. Running via the terminal is _required_.
+
 ---
 
-# 🖥 Program Usage
+## 🖥 Program Usage
 
-When the program starts, it will ask for some input parameters:
+When the program starts, it will ask the user to configure a few parameters before running the benchmark.
 
-* **Array Size** → number of elements to generate
-* **Maximum Value** → highest possible value in the random array
-* **Algorithm Choice** → which sorting algorithm to run
+### Required Inputs
 
-After selecting an algorithm, the program will:
+| Input             | Description                                           |
+| ----------------- | ----------------------------------------------------- |
+| **Array Size**    | Number of elements to generate (recommended: 10–1000) |
+| **Maximum Value** | Maximum value for the randomly generated numbers      |
+| **Algorithm**     | Sorting algorithm to execute                          |
 
-1. Generate a random array
-2. Show the **sorting process step-by-step**
-3. Print the **final sorted array**
-4. Display the **execution time**
+### Execution Flow
+
+The program will:
+
+1. Generate a **random integer array**
+2. Display the **initial array**
+3. Run the selected **sorting algorithm**
+4. Show the **sorting process step-by-step**
+5. Print the **final sorted array**
+6. Display the **execution time**
+
+### Example Run
+
+```
+╔════════════════════════════════════╗
+║    SORTING ALGORITHMS BENCHMARK    ║
+╚════════════════════════════════════╝
+
+Array size [10-1000, default 10]: 15
+Max value [1-∞, default 1M]: 30
+
+📊 Initial array: 16 1 23 12 25 26 17 21 12 6 28 1 19 14 30 
+
+╭── Available algorithms ──╮
+│ 1. 🎯 Selection Sort     │
+│ 2. 🔄 Insertion Sort     │
+│ 3. 🫧 Bubble Sort        │
+╰──────────────────────────╯
+➤ Choice: 2
+
+🚀 Running Insertion Sort...
+Ins 47 ⇄x 1: [47 62 38 74 56 41 89 50 74 81 47 36 31 73 42]
+Ins 74     : [38 47 62 74 56 41 89 50 74 81 47 36 31 73 42]
+...
+
+✅ Sorted!: 31 36 38 41 42 47 47 50 56 62 73 74 74 81 89 
+⏱️ Time: 11 ms
+```
+
+During execution the program prints **intermediate sorting steps**, allowing the user to observe how the array changes while the algorithm progresses.
 
 ---
 

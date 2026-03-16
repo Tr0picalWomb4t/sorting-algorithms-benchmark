@@ -13,16 +13,16 @@ public class Main {
         printColored("\u001B[32m║    \u001B[1mSORTING ALGORITHMS BENCHMARK\u001B[0m\u001B[32m    ║\u001B[0m");
         printColored("\u001B[32m╚════════════════════════════════════╝\u001B[0m\n");
         
-        System.out.print("\u001B[33mDimensione array \u001B[90m[10-1000, def. 10]\u001B[0m: \u001B[33m");
+        System.out.print("\u001B[33mArray size \u001B[90m[10-1000, default 10]\u001B[0m: \u001B[33m");
         int size = getInt(scanner, 10, 10, 1000);
-        System.out.print("\u001B[33mMax valore \u001B[90m[1-∞, def. 1M]\u001B[0m: \u001B[33m");
+        System.out.print("\u001B[33mMax value \u001B[90m[1-∞, default 1M]\u001B[0m: \u001B[33m");
         int maxValue = getInt(scanner, 1000000, 1);
         
         int[] array = generateRandomArray(size, maxValue);
-        printArray("\u001B[36m📊 Array iniziale\u001B[0m", array, true);
+        printArray("\u001B[36m📊 Initial array\u001B[0m", array, true);
         
         printSorterMenu();
-        System.out.print("\u001B[33m➤ Scelta: \u001B[0m");
+        System.out.print("\u001B[33m➤ Choice: \u001B[0m");
         int choice = getInt(scanner, 0, 1, 3);
         
         SortingAlgorithm sorter = switch (choice) {
@@ -33,20 +33,20 @@ public class Main {
         };
         
         if (sorter != null) {
-            System.out.println("\n\u001B[32m🚀 Avvio " + sorter.getName() + "...\u001B[0m");
+            System.out.println("\n\u001B[32m🚀 Running " + sorter.getName() + "...\u001B[0m");
             long start = System.currentTimeMillis();
             int[] toSort = array.clone();
             sorter.sortWithSteps(toSort);
             long end = System.currentTimeMillis();
             
-            printArray("\u001B[32m✅ Ordinato!\u001B[0m", toSort, false);
-            printColored("\u001B[31m⏱️ Tempo: \u001B[1m" + (end - start) + "\u001B[0m\u001B[31m ms\u001B[0m");
+            printArray("\u001B[32m✅ Sorted!\u001B[0m", toSort, false);
+            printColored("\u001B[31m⏱️ Time: \u001B[1m" + (end - start) + "\u001B[0m\u001B[31m ms\u001B[0m");
         }
         scanner.close();
     }
     
     private static void printSorterMenu() {
-        printColored("\u001B[35m╭── Algoritmi disponibili ──╮");
+        printColored("\u001B[35m╭── Available algorithms ──╮");
         printColored("\u001B[35m│ 1. 🎯 Selection Sort       │");
         printColored("\u001B[35m│ 2. 🔄 Insertion Sort       │");
         printColored("\u001B[35m│ 3. 🫧 Bubble Sort          │");

@@ -1,6 +1,7 @@
 package sorters;
 
 public class BubbleSort implements SortingAlgorithm {
+
     @Override
     public void sort(int[] array) {
         boolean swapped;
@@ -14,7 +15,7 @@ public class BubbleSort implements SortingAlgorithm {
             }
         } while (swapped);
     }
-    
+
     @Override
     public void sortWithSteps(int[] array) {
         int pass = 0;
@@ -23,9 +24,10 @@ public class BubbleSort implements SortingAlgorithm {
             swapped = false;
             pass++;
             int swaps = 0;
-            
+
+            // Step header
             System.out.printf("\u001B[90mPass%3d", pass);
-            
+
             for (int i = 0; i < array.length - pass; i++) {
                 if (array[i] > array[i + 1]) {
                     swap(array, i, i + 1);
@@ -35,21 +37,23 @@ public class BubbleSort implements SortingAlgorithm {
             }
 
             if (swaps > 0) {
-                System.out.printf("(%2d): \u001B[0m", swaps);
+                System.out.printf(" (%2d): \u001B[0m", swaps);
             } else {
-                System.out.print("    : \u001B[0m");
+                System.out.print("     : \u001B[0m");
             }
-            
+
             SortingAlgorithm.printArrayShort(array);
         } while (swapped);
     }
 
-
-    
     private void swap(int[] array, int i, int j) {
-        int tmp = array[i]; array[i] = array[j]; array[j] = tmp;
+        int tmp = array[i]; 
+        array[i] = array[j]; 
+        array[j] = tmp;
     }
-    
+
     @Override
-    public String getName() { return "Bubble Sort"; }
+    public String getName() {
+        return "Bubble Sort";
+    }
 }
