@@ -65,7 +65,9 @@ java -cp src Main
 ```
 
 > ⚠️ **Important:** Do **not** use Code Runner in VS Code. Running via the terminal is _required_.
-> ⚠️ **Note:** Some special characters (e.g., emoji, Unicode symbols) may not display correctly in VS Code's integrated terminal. This usually depends on the font settings. Users may need to adjust their terminal or font configuration if necessary.
+> 
+> ⚠️ **Note:** Some special characters (e.g., emoji, Unicode symbols) may not display correctly in VS Code's integrated terminal. 
+> This usually depends on the font settings. Users may need to adjust their terminal or font configuration if necessary.
 
 ---
 
